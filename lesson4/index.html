@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+   {{ block.super }}
+
+    <h1>{{ message|upper }}</h1>
+    <h2>{{ a.1 }}<h2>
+    <h2>{{ b.a }}<h2>
+    <h2>{{ c.isoformat|date:"%Y %m %d" }}<h2>
+
+     {% for id, user in users %}
+         <p>{{forloop.counter }}. <a href="{{ id }}">{{ user }}</a></p>
+     {% empty %}
+         <p>Not found</p>
+     {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Index</title>
+  </head>
+  <body>
+    <div>
+      {% for author in object_list %}
+      <p></h2>
+      <p><a href="mailto:{{ author.email }}">{{ author.name }}</a>
+      {% endfor %}
+
+    </div>
+  </body>
+</html>

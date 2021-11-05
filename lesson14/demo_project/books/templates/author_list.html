@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Index</title>
+  </head>
+  <body>
+    <div>
+      {% for author in object_list %}
+      <h2></h2>
+      <p><a href="mailto:{{ author.email }}">{{ author.name }}</a></p>
+      {% endfor %}
+        
+      {% if page_obj.has_previous %}
+      <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+      {% endif %}
+
+      {% if page_obj.has_next %}
+      <a href="?page={{ page_obj.next_page_number }}">Next</a>
+      {% endif %}
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Book list by author</title>
+  </head>
+  <body>
+    <div>
+      <h2>{{ object.name }}</h2>
+      <a href="mailto:{{ object.email }}">{{ object.email }}</a>
+    </div>
+    <ul>
+      {% for book in object_list %}
+      <li>{{ book.title }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Index</title>
+    <script type="text/javascript" src="/static/js/autocomplete.js"></script>
+  </head>
+  <body>
+    <header>
+      {% if request.user.is_authenticated %}
+      <h2>{{ request.user.username }}</h2>
+      <a href="/logout">Log out</a>
+      {% endif %}
+    </header>
+    <div>
+      <form>
+        <input text="" id="book_search" placeholder="Enter the name of the book">
+        <input type="submit">
+      </form>
+    </div>
+    <div>
+      <form method="POST" action="">
+        {{ form.as_p }}
+        <input type="submit">
+      </form>
+    </div>
+    <script type="text/javascript">
+      autocomplete(document.getElementById("book_search"));
+    </script>
+  </body>
+</html>

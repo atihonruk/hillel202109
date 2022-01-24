@@ -6,11 +6,9 @@ services:
       - "8000:8000"
     environment:
       DJANGO_SETTINGS_MODULE: django_blog.settings.local_dev
-    env_file: .env
+      PORT: 8000
     volumes:
       - .:/app
-    command:
-      python ./manage.py runserver 0.0.0.0:8000
   redis:
     image: "redis:alpine"
   db:
